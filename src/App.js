@@ -25,6 +25,7 @@ function Toast({ message, type, duration }) {
 function App() {
   const [active, setActive] = useState(false);
   const [type, setType] = useState("default");
+  const [message, setMessage] = useState("");
 
   return (
     <div className="App">
@@ -41,6 +42,13 @@ function App() {
         <option value="success">Success</option>
         <option value="error">Error</option>
       </select>
+      <textarea
+        cols="30"
+        rows="10"
+        value={message}
+        onChange={(e) => setMessage(e.currentTarget.value)}
+        placeholder="Add a message to display in the component"
+      ></textarea>
       <button
         className="button"
         onClick={() => {
@@ -51,11 +59,7 @@ function App() {
         Show Toast
       </button>
 
-      {active ? (
-        <Toast type={type} message="Warning message" duration={3000} />
-      ) : (
-        ""
-      )}
+      {active ? <Toast type={type} message={message} duration={3000} /> : ""}
     </div>
   );
 }
