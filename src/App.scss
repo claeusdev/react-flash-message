@@ -1,0 +1,71 @@
+:root {
+  --spacing: 1rem;
+  --padding: 1rem;
+  --background-color: #fff;
+  --border-color: #eee;
+  --text-color: #000;
+  --border-size: 1px;
+  --border-radius: 4px;
+}
+.App {
+  text-align: center;
+}
+
+.toast {
+  display: flex;
+  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  &__dismiss {
+    margin-left: auto;
+    padding: var(--padding);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 0;
+    border-left: var(--border-size) solid var(--border-color);
+    font: inherit;
+    cursor: pointer;
+  }
+  &__message {
+    padding: var(--padding);
+    font: inherit;
+  }
+}
+
+.toast.success {
+  --background-color: #d4edda;
+  --border-color: #c3e6cb;
+  --text-color: #155724;
+}
+
+.toast.error {
+  --background-color: #f8d7da;
+  --border-color: #f5c6cb;
+  --text-color: #721c24;
+}
+
+.toast.warning {
+  --background-color: #fff3cd;
+  --border-color: #ffeeba;
+  --text-color: #856404;
+}
+
+.toast-enter {
+  opacity: 0;
+}
+.toast-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.toast-exit {
+  opacity: 1;
+}
+.toast-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
