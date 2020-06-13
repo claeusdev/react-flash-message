@@ -2,6 +2,7 @@
 
 It looks something like this. 
 
+```
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
@@ -27,3 +28,4 @@ function Toast({ message, type, duration }) {
 }
 
 export default Toast;
+```
