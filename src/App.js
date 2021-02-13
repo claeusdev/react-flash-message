@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Toast from "./Toast";
+import Toast from "./Toast/Toast";
 import "./App.scss";
 import "./tailwind.generated.css";
 
