@@ -85,17 +85,8 @@ function App() {
             </button>
           </span>
         </div>
+        {active && <Toast type={type} message={message} duration={3000} />}
 
-        {active ? (
-          <Toast
-            type={type}
-            message={message}
-            position={position}
-            duration={3000}
-          />
-        ) : (
-          ""
-        )}
       </div>
     </div>
   );
