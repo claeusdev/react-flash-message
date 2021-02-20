@@ -2,7 +2,6 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import classnames from "classnames";
 import styles from "./toast.module.css";
-console.log(styles);
 
 function Toast({ message, type, duration, position, active, setActive }) {
   const ToastClassNames = {

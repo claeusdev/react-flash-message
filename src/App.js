@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import Toast from "./Toast";
 import styles from "./App.module.css";
+
 function App() {
   const [active, setActive] = useState(false);
   const [type, setType] = useState("default");
   const [position, setPosition] = useState("default");
   const [timer, setTimer] = useState(1000);
   const [message, setMessage] = useState("");
-
-  const hideToast = () => {
-    setActive(false);
-  };
 
   const handleShowToast = (e) => {
     e.preventDefault();
