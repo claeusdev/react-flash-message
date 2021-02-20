@@ -1,0 +1,65 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: 90vh;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.heading {
+  font-size: 2rem;
+  text-transform: underline;
+}
+
+.paragraph {
+  font-size: 1rem;
+  margin: 0.3rem inherit;
+}
+
+.link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+.testForm {
+  width: 320px;
+}
+.button {
+  padding: 0.75rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.formControl {
+  min-width: 300px;
+  padding: 0.5rem;
+}
+
+.formControl,
+.dropdown {
+  border-radius: 0.2rem;
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+.dropdown {
+  padding: 0.35rem 0.25rem;
+}
+
+.options {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
