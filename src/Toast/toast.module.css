@@ -1,3 +1,13 @@
+:root {
+  --spacing: 1rem;
+  --padding: 0.5rem;
+  --background-color: #fff;
+  --border-color: #eee;
+  --text-color: #000;
+  --border-size: 2px;
+  --border-radius: 4px;
+}
+
 .toast {
   display: flex;
   border: var(--border-size) solid var(--border-color);
@@ -7,20 +17,21 @@
 
   position: absolute;
   top: 1rem;
-  &__dismiss {
-    margin-left: auto;
-    padding: var(--padding);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border: 0;
-    border-left: var(--border-size) solid var(--border-color);
-    font: inherit;
-    cursor: pointer;
-  }
-  &__message {
-    padding: var(--padding);
-    font: inherit;
-  }
+}
+.toast .toastDismiss {
+  margin-left: auto;
+  padding: var(--padding);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 0;
+  border-left: var(--border-size) solid var(--border-color);
+  font: inherit;
+  cursor: pointer;
+}
+
+.toast .toastMessage {
+  padding: var(--padding);
+  font: inherit;
 }
 
 .toast.tleft {
