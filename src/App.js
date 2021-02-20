@@ -45,9 +45,8 @@ function App() {
           </div>
         </div>
         <form onSubmit={handleShowToast}>
-          <div className="grid md:grid-cols-3 gap-3">
+          <div>
             <select
-              className="block appearance-none mb-6 w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="lang"
               onChange={({ target }) => setType(target.value)}
               value={type}
@@ -58,7 +57,6 @@ function App() {
               <option value="error">Error</option>
             </select>
             <select
-              className="block appearance-none mb-6 w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="lang"
               onChange={({ target }) => setPosition(target.value)}
               value={position}
@@ -70,7 +68,6 @@ function App() {
               <option value="bright">Bottom Right</option>
             </select>
             <select
-              className="block appearance-none mb-6 w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="lang"
               onChange={({ target }) => setTimer(target.value)}
               value={timer}
@@ -82,7 +79,6 @@ function App() {
             </select>
           </div>
           <textarea
-            className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             cols="20"
             rows="5"
             value={message}
@@ -90,14 +86,9 @@ function App() {
             placeholder="Add a message to display in the component"
           />
 
-          <div className="mt-6">
-            <span className="block w-full rounded-md shadow-sm">
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-              >
-                Show Notification
-              </button>
+          <div>
+            <span>
+              <button type="submit">Show Notification</button>
             </span>
           </div>
         </form>
