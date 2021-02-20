@@ -20,18 +20,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-8 sm:px-6 lg:px-8">
-      <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="py-12 bg-white">
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:text-center">
-              <p className="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-                React flash notifications
-              </p>
-              <p className="mt-4 max-w-2xl text-xl leading-7 lg:mx-auto">
-                A simple React component to display flash messages
-              </p>
-              <p className="mt-4 max-w-2xl text-xl leading-7 lg:mx-auto">
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <p>React flash notifications</p>
+              <p>A simple React component to display flash messages</p>
+              <p>
                 <a
                   href="https://github.com/claeusdev/react-flash-message"
                   target="_blank"
