@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Toast from "./Toast";
+import Toast from "./Toast/Toast";
 import "./App.scss";
 import "./tailwind.generated.css";
 
@@ -110,15 +110,7 @@ function App() {
             </button>
           </span>
         </div>
-
-        {active && (
-          <Toast
-            type={type}
-            message={message}
-            position={position}
-            duration={8000}
-          />
-        )}
+        {active && <Toast type={type} message={message} duration={3000} />}
       </div>
     </div>
   );
