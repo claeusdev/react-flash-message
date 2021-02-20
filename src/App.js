@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Toast from "./Toast/Toast";
+import Toast from "./Toast";
 import "./App.scss";
 import "./tailwind.generated.css";
 
@@ -38,7 +38,7 @@ function App() {
           id="lang"
           onChange={({ target }) => {
             setType(target.value);
-            setActive(false);
+            setActive((state) => !state);
           }}
           value={type}
         >
@@ -85,8 +85,15 @@ function App() {
             </button>
           </span>
         </div>
-        {active && <Toast type={type} message={message} duration={3000} />}
-
+        {active && (
+          <Toast
+            type={type}
+            message={message}
+            duration={3000}
+            active={active}
+            setActive={setActive}
+          />
+        )}
       </div>
     </div>
   );
