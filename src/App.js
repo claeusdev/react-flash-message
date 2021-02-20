@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Toast from "./Toast";
 import "./App.scss";
-import "./tailwind.generated.css";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -58,8 +57,8 @@ function App() {
               value={position}
             >
               <option value="default">Position</option>
-              <option value="left">Left</option>
-              <option value="right">Right</option>
+              <option value="tleft">Left</option>
+              <option value="tright">Right</option>
               <option value="bleft">Bottom Left</option>
               <option value="bright">Bottom Right</option>
             </select>
