@@ -27,7 +27,7 @@ function Toast({ message, type, duration, position, active, setActive }) {
           className={styles.toastDismiss}
           onClick={() => setActive((state) => !state)}
         >
-          Dismiss
+          &#10005;
         </button>
       </div>
     </CSSTransition>
