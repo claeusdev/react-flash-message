@@ -9,9 +9,17 @@ function App() {
   const [timer, setTimer] = useState(1000);
   const [message, setMessage] = useState("");
 
+  const hideToast = () => {
+    setActive(false);
+  };
+
   const handleShowToast = (e) => {
+    hideToast();
     e.preventDefault();
-    setActive(true);
+    if (message) {
+      setActive(true);
+      window.setTimeout(hideToast, timer);
+    }
   };
 
   return (

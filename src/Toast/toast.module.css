@@ -14,7 +14,6 @@
   border-radius: var(--border-radius);
   background-color: var(--background-color);
   color: var(--text-color);
-
   position: absolute;
   top: 1rem;
 }
@@ -44,12 +43,12 @@
 }
 
 .toast.bleft {
-  top: unset;
+  top: 35rem;
   left: 1rem;
 }
 
 .toast.bright {
-  top: unset;
+  top: 35rem;
   right: 1rem;
 }
 .toast.success {
