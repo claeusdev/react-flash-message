@@ -12,6 +12,8 @@ function Toast({ message, type, duration, position, active, setActive }) {
     [styles.bright]: position === "bright",
     [styles.tright]: position === "tright",
     [styles.tleft]: position === "tleft",
+    [styles.tcenter]: position === "tcenter",
+    [styles.bcenter]: position === "bcenter",
   };
   return (
     <CSSTransition
