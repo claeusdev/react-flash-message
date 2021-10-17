@@ -58,9 +58,9 @@ function App() {
             className={styles.dropdown}
           >
             <option value="default">Position</option>
-            <option value="tleft">Left</option>
-            <option value="tright">Right</option>
-            <option value="tcenter">Center</option>
+            <option value="tleft">Top Left</option>
+            <option value="tright">Top Right</option>
+            <option value="tcenter">Top Center</option>
             <option value="bleft">Bottom Left</option>
             <option value="bright">Bottom Right</option>
             <option value="bcenter">Bottom Center</option>
