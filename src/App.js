@@ -60,8 +60,10 @@ function App() {
             <option value="default">Position</option>
             <option value="tleft">Left</option>
             <option value="tright">Right</option>
+            <option value="tcenter">Center</option>
             <option value="bleft">Bottom Left</option>
             <option value="bright">Bottom Right</option>
+            <option value="bcenter">Bottom Center</option>
           </select>
           <select
             id="lang"
