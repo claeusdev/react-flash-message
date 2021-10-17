@@ -43,12 +43,14 @@
 }
 
 .toast.bleft {
-  top: 35rem;
+  top: auto;
+  bottom: 1rem;
   left: 1rem;
 }
 
 .toast.bright {
-  top: 35rem;
+  top: auto;
+  bottom: 1rem;
   right: 1rem;
 }
 
