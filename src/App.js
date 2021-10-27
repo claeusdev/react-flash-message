@@ -101,6 +101,7 @@ function App() {
           active={active}
           setActive={setActive}
           position={position}
+          width="full"
         />
       )}
     </main>
