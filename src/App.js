@@ -5,7 +5,6 @@ import styles from "./App.module.css";
 function App() {
   const [active, setActive] = useState(false);
   const [type, setType] = useState("default");
-  const [height, setHeight] = useState("default");
   const [width, setWidth] = useState("default");
   const [position, setPosition] = useState("default");
   const [timer, setTimer] = useState(1000);
@@ -67,17 +66,6 @@ function App() {
           </select>
           <select
             id="lang"
-            onChange={({ target }) => setHeight(target.value)}
-            value={height}
-            className={styles.dropdown}
-          >
-            <option value="default">Height</option>
-            <option value="small">Small Height</option>
-            <option value="medium">Medium Height</option>
-            <option value="large">Large Height</option>
-          </select>
-          <select
-            id="lang"
             onChange={({ target }) => setPosition(target.value)}
             value={position}
             className={styles.dropdown}
@@ -126,7 +114,6 @@ function App() {
           active={active}
           setActive={setActive}
           position={position}
-          height={height}
           width={width}
         />
       )}

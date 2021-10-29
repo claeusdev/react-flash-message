@@ -112,13 +112,3 @@
 .fullWidth {
   width: 100%;
 }
-
-.smallHeight {
-  height: var(--small);
-}
-.mediumHeight {
-  height: var(--medium);
-}
-.largeHeight {
-  height: var(--large)
-}
