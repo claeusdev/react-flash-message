@@ -15,7 +15,10 @@ function Toast({ message,width, type, duration, position, active, setActive }) {
     [styles.tcenter]: position === "tcenter",
     [styles.bcenter]: position === "bcenter",
     [styles.bcenter]: position === "bcenter",
-    [styles.fullWidth]: width === "full"
+    [styles.fullWidth]: width === "full",
+    [styles.smallWidth]: width === "small",
+    [styles.mediumWidth]: width === "medium",
+    [styles.largeWidth]: width === "large"
   };
   return (
     <CSSTransition

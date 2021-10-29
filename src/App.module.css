@@ -59,7 +59,9 @@
 }
 
 .options {
-  display: flex;
   margin-bottom: 1rem;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;  
 }

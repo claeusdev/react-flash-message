@@ -6,6 +6,9 @@
   --text-color: #000;
   --border-size: 2px;
   --border-radius: 4px;
+  --small: 25%;
+  --medium: 50%;
+  --large: 75%;
 }
 
 .toast {
@@ -97,6 +100,15 @@
   transition: opacity 200ms;
 }
 
+.smallWidth {
+  width: var(--small);
+}
+.mediumWidth {
+  width: var(--medium);
+}
+.largeWidth {
+  width: var(--large);
+}
 .fullWidth {
   width: 100%;
 }
