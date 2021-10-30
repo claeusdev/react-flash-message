@@ -26,8 +26,8 @@ function App() {
   return (
     <main className={styles.main}>
       <header className={styles.hero}>
-        <h1 classNAme={styles.heading}>React flash notifications</h1>
-        <p classNAme={styles.paragraph}>
+        <h1 className={styles.heading}>React flash notifications</h1>
+        <p className={styles.paragraph}>
           A simple React component to display flash messages
         </p>
         <a
@@ -41,54 +41,66 @@ function App() {
       </header>
       <form onSubmit={handleShowToast} className={styles.testForm}>
         <div className={styles.options}>
-          <select
-            id="lang"
-            onChange={({ target }) => setType(target.value)}
-            value={type}
-            className={styles.dropdown}
-          >
-            <option value="default">Type</option>
-            <option value="warning">Warning</option>
-            <option value="success">Success</option>
-            <option value="error">Error</option>
-          </select>
-          <select
-            id="lang"
-            onChange={({ target }) => setWidth(target.value)}
-            value={width}
-            className={styles.dropdown}
-          >
-            <option value="default">Width</option>
-            <option value="small">Small Width</option>
-            <option value="medium">Medium Width</option>
-            <option value="large">Large Width</option>
-            <option value="full">Full Width</option>
-          </select>
-          <select
-            id="lang"
-            onChange={({ target }) => setPosition(target.value)}
-            value={position}
-            className={styles.dropdown}
-          >
-            <option value="default">Position</option>
-            <option value="tleft">Top Left</option>
-            <option value="tright">Top Right</option>
-            <option value="tcenter">Top Center</option>
-            <option value="bleft">Bottom Left</option>
-            <option value="bright">Bottom Right</option>
-            <option value="bcenter">Bottom Center</option>
-          </select>
-          <select
-            id="lang"
-            onChange={({ target }) => setTimer(target.value)}
-            value={timer}
-            className={styles.dropdown}
-          >
-            <option value="2000">Duration</option>
-            <option value="1000">1s</option>
-            <option value="2000">2s</option>
-            <option value="3000">3s</option>
-          </select>
+          <div className={styles.dropdownGroup}>
+            <label htmlFor="type" className={styles.dropdownLabel}>Type:</label>
+            <select
+                id="type"
+                onChange={({ target }) => setType(target.value)}
+                value={type}
+                className={styles.dropdown}
+            >
+                <option value="default">Default</option>
+                <option value="warning">Warning</option>
+                <option value="success">Success</option>
+                <option value="error">Error</option>
+            </select>
+          </div>
+          <div className={styles.dropdownGroup}>
+            <label htmlFor="width" className={styles.dropdownLabel}>Width:</label>
+            <select
+                id="width"
+                onChange={({ target }) => setWidth(target.value)}
+                value={width}
+                className={styles.dropdown}
+            >
+                <option value="default">Default</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="full">Full</option>
+            </select>
+          </div>
+          <div className={styles.dropdownGroup}>
+            <label htmlFor="position" className={styles.dropdownLabel}>Position:</label>
+            <select
+                id="position"
+                onChange={({ target }) => setPosition(target.value)}
+                value={position}
+                className={styles.dropdown}
+            >
+                <option value="default">Default</option>
+                <option value="tleft">Top Left</option>
+                <option value="tright">Top Right</option>
+                <option value="tcenter">Top Center</option>
+                <option value="bleft">Bottom Left</option>
+                <option value="bright">Bottom Right</option>
+                <option value="bcenter">Bottom Center</option>
+            </select>
+          </div>
+          <div className={styles.dropdownGroup}>
+            <label htmlFor="duration" className={styles.dropdownLabel}>Duration:</label>
+            <select
+                id="duration"
+                onChange={({ target }) => setTimer(target.value)}
+                value={timer}
+                className={styles.dropdown}
+                aria-label="Duration in seconds"
+            >                
+                <option value="1000">1s</option>
+                <option value="2000">2s</option>
+                <option value="3000">3s</option>
+            </select>
+          </div>
         </div>
         <textarea
           required
@@ -98,6 +110,8 @@ function App() {
           onChange={(e) => setMessage(e.currentTarget.value)}
           placeholder="Add a message to display in the component"
           className={styles.formControl}
+          aria-label="Add message"
+          aria-required
         />
 
         <div>
