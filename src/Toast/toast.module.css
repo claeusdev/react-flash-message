@@ -11,6 +11,10 @@
   --large: 75%;
 }
 
+body {
+  overflow: hidden;
+}
+
 .toast {
   display: flex;
   border: var(--border-size) solid var(--border-color);
