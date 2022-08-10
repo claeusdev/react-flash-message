@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import classnames from "classnames";
 import styles from "./toast.module.css";
 
-function Toast({ message, type, duration, position, active, setActive }) {
+function Toast({ message,width, type, duration, position, active, setActive }) {
   const ToastClassNames = {
     [styles.error]: type === "error",
     [styles.warning]: type === "warning",
@@ -12,6 +12,13 @@ function Toast({ message, type, duration, position, active, setActive }) {
     [styles.bright]: position === "bright",
     [styles.tright]: position === "tright",
     [styles.tleft]: position === "tleft",
+    [styles.tcenter]: position === "tcenter",
+    [styles.bcenter]: position === "bcenter",
+    [styles.bcenter]: position === "bcenter",
+    [styles.fullWidth]: width === "full",
+    [styles.smallWidth]: width === "small",
+    [styles.mediumWidth]: width === "medium",
+    [styles.largeWidth]: width === "large"
   };
   return (
     <CSSTransition

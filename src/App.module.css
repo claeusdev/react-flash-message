@@ -59,7 +59,18 @@
 }
 
 .options {
-  display: flex;
   margin-bottom: 1rem;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 60px;  
+}
+
+.dropdownGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dropdownLabel {
+    font-weight: bold;
 }

@@ -6,6 +6,13 @@
   --text-color: #000;
   --border-size: 2px;
   --border-radius: 4px;
+  --small: 25%;
+  --medium: 50%;
+  --large: 75%;
+}
+
+body {
+  overflow: hidden;
 }
 
 .toast {
@@ -51,6 +58,19 @@
   top: 35rem;
   right: 1rem;
 }
+
+.toast.tcenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast.bcenter {
+  top: auto;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .toast.success {
   --background-color: #d4edda;
   --border-color: #c3e6cb;
@@ -82,4 +102,17 @@
 .toast-exit-active {
   opacity: 0;
   transition: opacity 200ms;
+}
+
+.smallWidth {
+  width: var(--small);
+}
+.mediumWidth {
+  width: var(--medium);
+}
+.largeWidth {
+  width: var(--large);
+}
+.fullWidth {
+  width: 100%;
 }
