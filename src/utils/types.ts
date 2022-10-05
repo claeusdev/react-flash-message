@@ -22,3 +22,13 @@ export interface ToastProps {
   active: boolean;
   setActive: (active: boolean) => void;
 }
+
+export interface TimeSelectorProps {
+  timer: Timer;
+  setTimer: (time: Timer) => void;
+}
+
+export interface PositionSelectorProps {
+  position: Position;
+  setPosition: (Position: Position) => void;
+}

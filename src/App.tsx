@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Toast from "./Toast";
 import styles from "./App.module.css";
 import { Position, Width, Timer, Type } from "./utils/types";
+import TimerSelector from "./components/TimerSelector";
+import PositionSelector from "./components/PositionSelector";
 
 function App() {
   const [active, setActive] = useState<boolean>(false);
@@ -79,45 +81,9 @@ function App() {
               <option value="full">Full</option>
             </select>
           </div>
-          <div className={styles.dropdownGroup}>
-            <label htmlFor="position" className={styles.dropdownLabel}>
-              Position:
-            </label>
-            <select
-              id="position"
-              onChange={({ target }) =>
-                setPosition(target.value as unknown as Position)
-              }
-              value={position}
-              className={styles.dropdown}
-            >
-              <option value="default">Default</option>
-              <option value="tleft">Top Left</option>
-              <option value="tright">Top Right</option>
-              <option value="tcenter">Top Center</option>
-              <option value="bleft">Bottom Left</option>
-              <option value="bright">Bottom Right</option>
-              <option value="bcenter">Bottom Center</option>
-            </select>
-          </div>
-          <div className={styles.dropdownGroup}>
-            <label htmlFor="duration" className={styles.dropdownLabel}>
-              Duration:
-            </label>
-            <select
-              id="duration"
-              onChange={({ target }) =>
-                setTimer(target.value as unknown as Timer)
-              }
-              value={timer}
-              className={styles.dropdown}
-              aria-label="Duration in seconds"
-            >
-              <option value={1000}>1s</option>
-              <option value={2000}>2s</option>
-              <option value={3000}>3s</option>
-            </select>
-          </div>
+          <PositionSelector setPosition={setPosition} position={position} />
+
+          <TimerSelector setTimer={setTimer} timer={timer} />
         </div>
         <textarea
           required
