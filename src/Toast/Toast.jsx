@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CSSTransition } from "react-transition-group";
 import classnames from "classnames";
 import styles from "./toast.module.css";
+import { ToastContext } from "../context/ToastContext";
 
-function Toast({ message,width, type, duration, position, active, setActive }) {
+function Toast() {
+  const { state, dispatch } = useContext(ToastContext);
+  const { message, width, type, timer, position, active } = state;
+
   const ToastClassNames = {
     [styles.error]: type === "error",
     [styles.warning]: type === "warning",
@@ -18,21 +22,28 @@ function Toast({ message,width, type, duration, position, active, setActive }) {
     [styles.fullWidth]: width === "full",
     [styles.smallWidth]: width === "small",
     [styles.mediumWidth]: width === "medium",
-    [styles.largeWidth]: width === "large"
+    [styles.largeWidth]: width === "large",
   };
+
+  const setActive = (isActive) => {
+    dispatch({ type: "SET_ACTIVE", payload: isActive });
+  };
+
+  const timeout = parseInt(timer);
+
   return (
     <CSSTransition
       in={active}
-      timeout={duration}
+      timeout={timeout}
       classNames="toast"
       unmountOnExit
-      onExit={() => setActive((state) => !state)}
+      onExit={() => setActive(false)}
     >
       <div className={classnames(styles.toast, ToastClassNames)}>
         <div className={styles.toastMessage}>{message}</div>
         <button
           className={styles.toastDismiss}
-          onClick={() => setActive((state) => !state)}
+          onClick={() => setActive(false)}
         >
           &#10005;
         </button>
