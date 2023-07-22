@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Toast from "./Toast";
 import styles from "./App.module.css";
 import { ToastContext } from "./context/ToastContext";
+import Option from "./components/Option";
 
 function App() {
   const { state, dispatch } = useContext(ToastContext);
@@ -20,6 +21,41 @@ function App() {
       window.setTimeout(hideToast, timer);
     }
   };
+
+  const handleDispatch = (type, payload) => {
+    dispatch({ type, payload });
+  };
+
+  const alertOptions = [
+    { title: "Default", value: "default" },
+    { title: "Warning", value: "warning" },
+    { title: "Success", value: "success" },
+    { title: "Error", value: "error" },
+  ];
+
+  const widthOptions = [
+    { title: "Default", value: "default" },
+    { title: "Small", value: "small" },
+    { title: "Medium", value: "medium" },
+    { title: "Large", value: "large" },
+    { title: "Full", value: "full" },
+  ];
+
+  const positionOptions = [
+    { title: "Default", value: "default" },
+    { title: "Top Left", value: "tleft" },
+    { title: "Top Right", value: "tright" },
+    { title: "Top Center", value: "tcenter" },
+    { title: "Bottom Left", value: "bleft" },
+    { title: "Bottom Right", value: "bright" },
+    { title: "Bottom Center", value: "bcenter" },
+  ];
+
+  const durationOptions = [
+    { title: "1s", value: "1000" },
+    { title: "2s", value: "2000" },
+    { title: "3s", value: "3000" },
+  ];
 
   return (
     <main className={styles.main}>
@@ -46,15 +82,14 @@ function App() {
             <select
               id="type"
               onChange={({ target }) =>
-                dispatch({ type: "SET_TYPE", payload: target.value })
+                handleDispatch("SET_TYPE", target.value)
               }
               value={type}
               className={styles.dropdown}
             >
-              <option value="default">Default</option>
-              <option value="warning">Warning</option>
-              <option value="success">Success</option>
-              <option value="error">Error</option>
+              {alertOptions.map((option) => (
+                <Option value={option.value} title={option.title} />
+              ))}
             </select>
           </div>
           <div className={styles.dropdownGroup}>
@@ -64,16 +99,14 @@ function App() {
             <select
               id="width"
               onChange={({ target }) =>
-                dispatch({ type: "SET_WIDTH", payload: target.value })
+                handleDispatch("SET_WIDTH", target.value)
               }
               value={width}
               className={styles.dropdown}
             >
-              <option value="default">Default</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-              <option value="full">Full</option>
+              {widthOptions.map((option) => (
+                <Option value={option.value} title={option.title} />
+              ))}
             </select>
           </div>
           <div className={styles.dropdownGroup}>
@@ -83,18 +116,14 @@ function App() {
             <select
               id="position"
               onChange={({ target }) =>
-                dispatch({ type: "SET_POSITION", payload: target.value })
+                handleDispatch("SET_POSITION", target.value)
               }
               value={position}
               className={styles.dropdown}
             >
-              <option value="default">Default</option>
-              <option value="tleft">Top Left</option>
-              <option value="tright">Top Right</option>
-              <option value="tcenter">Top Center</option>
-              <option value="bleft">Bottom Left</option>
-              <option value="bright">Bottom Right</option>
-              <option value="bcenter">Bottom Center</option>
+              {positionOptions.map((option) => (
+                <Option value={option.value} title={option.title} />
+              ))}
             </select>
           </div>
           <div className={styles.dropdownGroup}>
@@ -104,15 +133,15 @@ function App() {
             <select
               id="duration"
               onChange={({ target }) =>
-                dispatch({ type: "SET_TIMER", payload: target.value })
+                handleDispatch("SET_TIMER", target.value)
               }
               value={timer}
               className={styles.dropdown}
               aria-label="Duration in seconds"
             >
-              <option value="1000">1s</option>
-              <option value="2000">2s</option>
-              <option value="3000">3s</option>
+              {durationOptions.map((option) => (
+                <Option value={option.value} title={option.title} />
+              ))}
             </select>
           </div>
         </div>
@@ -121,9 +150,7 @@ function App() {
           cols="20"
           rows="5"
           value={message}
-          onChange={(e) =>
-            dispatch({ type: "SET_MESSAGE", payload: e.target.value })
-          }
+          onChange={(e) => handleDispatch("SET_MESSAGE", e.target.value)}
           placeholder="Add a message to display in the component"
           className={styles.formControl}
           aria-label="Add message"
@@ -136,7 +163,17 @@ function App() {
           </button>
         </div>
       </form>
-      {active && <Toast />}
+      {active && (
+        <Toast
+          message={message}
+          width={width}
+          type={type}
+          timer={timer}
+          position={position}
+          active={active}
+          setActive={hideToast}
+        />
+      )}
     </main>
   );
 }

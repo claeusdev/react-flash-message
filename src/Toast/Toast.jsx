@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { CSSTransition } from "react-transition-group";
 import classnames from "classnames";
 import styles from "./toast.module.css";
-import { ToastContext } from "../context/ToastContext";
 
-function Toast() {
-  const { state, dispatch } = useContext(ToastContext);
-  const { message, width, type, timer, position, active } = state;
-
+function Toast({ message, width, type, timer, position, active, setActive }) {
   const ToastClassNames = {
     [styles.error]: type === "error",
     [styles.warning]: type === "warning",
@@ -23,10 +19,6 @@ function Toast() {
     [styles.smallWidth]: width === "small",
     [styles.mediumWidth]: width === "medium",
     [styles.largeWidth]: width === "large",
-  };
-
-  const setActive = (isActive) => {
-    dispatch({ type: "SET_ACTIVE", payload: isActive });
   };
 
   const timeout = parseInt(timer);
