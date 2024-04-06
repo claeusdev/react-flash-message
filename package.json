@@ -7,15 +7,14 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
-    "node-sass": "^7.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
     "react-transition-group": "^4.4.1",
     "tailwindcss": "^3.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
